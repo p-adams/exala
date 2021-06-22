@@ -42,7 +42,7 @@ h5 {
 .page-navigation {
   margin-right: 25px;
 }
-a {
+nav a {
   line-height: 50px;
   text-decoration: none;
   color: whitesmoke;
