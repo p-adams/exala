@@ -1,7 +1,13 @@
 <template>
   <nav>
-    <router-link to="/">home</router-link> |
-    <router-link to="/types">types</router-link>
+    <div>
+      <h3>exhala</h3>
+      <h5>An interactive <i>najasa</i> removal walkthrough</h5>
+    </div>
+    <div class="page-navigation">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/resources">Resources</router-link>
+    </div>
   </nav>
 
   <router-view></router-view>
@@ -18,7 +24,27 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 1px solid lightgray;
+  background: steelblue;
+  color: whitesmoke;
+}
+h3,
+h5 {
+  padding: 4px;
+  margin: unset;
+  text-align: left;
+}
+.page-navigation {
+  margin-right: 25px;
+}
+a {
+  line-height: 50px;
+  text-decoration: none;
+  color: whitesmoke;
 }
 </style>

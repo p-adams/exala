@@ -1,9 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../components/Home.vue";
-import Types from "../components/Types.vue";
+import Resources from "../components/Resources.vue";
 const routes = [
   { path: "/", component: Home },
-  { path: "/types", component: Types },
+  { path: "/resources", component: Resources },
 ];
 const router = createRouter({
   history: createWebHashHistory(),
