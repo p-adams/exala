@@ -8,8 +8,8 @@ const routes = [
     path: "/",
     component: Home,
     children: [
-      { path: "/types", component: Types },
-      { path: "/transfer", component: Transfer },
+      { path: "/types", component: Types, name: "types-of-filth" },
+      { path: "/transfer", component: Transfer, name: "transfer-type" },
     ],
   },
   { path: "/resources", component: Resources },
