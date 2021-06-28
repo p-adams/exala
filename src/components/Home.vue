@@ -1,22 +1,22 @@
 <template>
   <div>
-    Home
+    <h2>Home</h2>
+    <router-view />
     <ul>
-      <li v-for="(step, key) in 4" :key="key">
-        <span>{{ step }}</span>
+      <li v-for="(step, index) in steps" :key="index">
+        <span @click="handleStep(step)">{{ index + 1 }}</span>
       </li>
     </ul>
-    <router-view />
   </div>
 </template>
 
 <script setup>
-import { defineProps, reactive } from "vue";
-defineProps({
-  msg: String,
-});
-
-const state = reactive({ count: 0 });
+import { useRouter } from "vue-router";
+const router = useRouter();
+const { children: steps } = router
+  .getRoutes()
+  .find((route) => route.path === "/");
+const handleStep = ({ path }) => router.push(path);
 </script>
 
 <style scoped>
