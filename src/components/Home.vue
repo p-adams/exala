@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2>Home</h2>
+    <p>curr: {{ currentStep }}</p>
     <router-view />
+
     <ul>
       <li v-for="(step, index) in steps" :key="index">
         <span @click="handleStep(step)">{{ index + 1 }}</span>
@@ -11,12 +13,18 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
+import { ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
 const router = useRouter();
+const route = useRoute();
 const { children: steps } = router
   .getRoutes()
   .find((route) => route.path === "/");
-const handleStep = ({ path }) => router.push(path);
+const currentStep = ref(route.name);
+const handleStep = ({ path, name }) => {
+  currentStep.value = name;
+  router.push(path);
+};
 </script>
 
 <style scoped>
