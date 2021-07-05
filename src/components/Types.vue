@@ -1,13 +1,25 @@
 <template>
   <div class="types-container">
     <div class="type">
-      <content-card><h4>light</h4></content-card>
+      <content-card>
+        <template v-slot:header>
+          <h4>light</h4>
+        </template>
+      </content-card>
     </div>
     <div class="type">
-      <content-card><h4>medium</h4></content-card>
+      <content-card>
+        <template v-slot:header>
+          <h4>medium</h4>
+        </template>
+      </content-card>
     </div>
     <div class="type">
-      <content-card><h4>heavy</h4></content-card>
+      <content-card>
+        <template v-slot:header>
+          <h4>heavy</h4>
+        </template>
+      </content-card>
     </div>
   </div>
 </template>
