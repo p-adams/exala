@@ -1,19 +1,22 @@
 <template>
   <div class="types-container">
     <div class="type">
-      <h4>light</h4>
+      <content-card><h4>light</h4></content-card>
     </div>
     <div class="type">
-      <h4>medium</h4>
+      <content-card><h4>medium</h4></content-card>
     </div>
     <div class="type">
-      <h4>heavy</h4>
+      <content-card><h4>heavy</h4></content-card>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import ContentCard from "./ContentCard.vue";
+export default {
+  components: { ContentCard },
+};
 </script>
 
 <style>
