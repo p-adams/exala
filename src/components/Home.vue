@@ -1,7 +1,6 @@
 <template>
   <div>
     <h2>Home</h2>
-    <p>curr: {{ currentStep }}</p>
     <router-view />
 
     <ul>
