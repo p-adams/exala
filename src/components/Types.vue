@@ -37,7 +37,5 @@ export default {
 }
 .type {
   color: slategray;
-  border: 1px solid lightgray;
-  border-radius: 2px;
 }
 </style>
