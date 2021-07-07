@@ -22,7 +22,6 @@ const { children: steps } = router
   .find((route) => route.path === "/");
 const prompt = ref(prompts[route.name]);
 const handleStep = ({ path, name }) => {
-  console.log(name);
   prompt.value = prompts[name];
   router.push(path);
 };
