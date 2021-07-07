@@ -12,15 +12,19 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onUpdated, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import prompts from "../utils/routeNameToDescriptionMap";
 const router = useRouter();
 const route = useRoute();
+const prompt = ref(prompts[route.name]);
+onUpdated(() => {
+  prompt.value = prompts[route.name];
+});
 const { children: steps } = router
   .getRoutes()
   .find((route) => route.path === "/");
-const prompt = ref(prompts[route.name]);
+
 const handleStep = ({ path, name }) => {
   prompt.value = prompts[name];
   router.push(path);
