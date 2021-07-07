@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Home</h2>
+    <h2>{{ prompt }}</h2>
     <router-view />
 
     <ul>
@@ -14,14 +14,16 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
+import prompts from "../utils/routeNameToDescriptionMap";
 const router = useRouter();
 const route = useRoute();
 const { children: steps } = router
   .getRoutes()
   .find((route) => route.path === "/");
-const currentStep = ref(route.name);
+const prompt = ref(prompts[route.name]);
 const handleStep = ({ path, name }) => {
-  currentStep.value = name;
+  console.log(name);
+  prompt.value = prompts[name];
   router.push(path);
 };
 </script>
