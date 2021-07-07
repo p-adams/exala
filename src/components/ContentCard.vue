@@ -18,8 +18,20 @@ export default {
 </script>
 <style scoped>
 .content-card-container {
+  display: grid;
   border: 1px solid lightgray;
   border-radius: 2px;
   height: 100%;
+}
+.content-card-container:hover {
+  border: 1px solid lightskyblue;
+  box-shadow: 5px 3px 3px lightgray;
+}
+header {
+  margin: 8px 0 0 0;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 2px 2px 2px lightgray;
+  height: 25%;
+  font-weight: bold;
 }
 </style>

@@ -2,22 +2,26 @@
   <div class="transfer-container">
     <div class="transfer">
       <content-card>
-        <template v-slot:header> dry item wet filth </template>
+        <template v-slot:header>Scenario #1</template>
+        <template v-slot:content> dry item wet filth </template>
       </content-card>
     </div>
     <div class="transfer">
       <content-card>
-        <template v-slot:header> wet item dry filth</template>
+        <template v-slot:header>Scenario #2</template>
+        <template v-slot:content> wet item dry filth</template>
       </content-card>
     </div>
     <div class="transfer">
       <content-card>
-        <template v-slot:header> wet item wet filth</template>
+        <template v-slot:header>Scenario #3</template>
+        <template v-slot:content> wet item wet filth</template>
       </content-card>
     </div>
     <div class="transfer">
       <content-card>
-        <template v-slot:header>dry item dry filth</template>
+        <template v-slot:header>Scenario #4</template>
+        <template v-slot:content>dry item dry filth</template>
       </content-card>
     </div>
   </div>
