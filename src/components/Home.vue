@@ -5,7 +5,7 @@
 
     <ul>
       <li v-for="(step, index) in steps" :key="index">
-        <span @click="handleStep(step)">{{ index + 1 }}</span>
+        <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
       </li>
     </ul>
   </div>
@@ -47,5 +47,8 @@ ul {
 li {
   padding: 10px;
   display: inline-block;
+}
+.step {
+  cursor: pointer;
 }
 </style>

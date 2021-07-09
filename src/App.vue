@@ -5,7 +5,7 @@
       <h5>An interactive <i>najasa</i> removal walkthrough</h5>
     </div>
     <div class="page-navigation">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
       <router-link to="/resources">Resources</router-link>
     </div>
   </nav>
@@ -40,9 +40,12 @@ h5 {
   text-align: left;
 }
 .page-navigation {
+  display: flex;
+  justify-content: space-between;
   margin-right: 25px;
 }
 nav a {
+  margin-right: 10px;
   line-height: 50px;
   text-decoration: none;
   color: whitesmoke;

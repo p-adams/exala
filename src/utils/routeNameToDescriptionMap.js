@@ -1,8 +1,9 @@
 const routeNameToDescriptionMap = {
   home: "Welcome to exhala",
   start: "Click start to begin",
-  types_of_filth: "Describe the type of filth",
-  transfer_type: "Describe how the filth transferred",
+  types: "Describe the type of filth",
+  transfer: "Describe how the filth transferred",
+  attributes: "Describe the taste, color, and smell",
 };
 
 export default routeNameToDescriptionMap;
