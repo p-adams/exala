@@ -18,6 +18,7 @@ export default {
 </script>
 <style scoped>
 .content-card-container {
+  cursor: pointer;
   display: grid;
   border: 1px solid lightgray;
   border-radius: 2px;
