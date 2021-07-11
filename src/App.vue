@@ -1,16 +1,21 @@
 <template>
-  <nav>
-    <div>
-      <h3>exhala</h3>
-      <h5>An interactive <i>najasa</i> removal walkthrough</h5>
-    </div>
-    <div class="page-navigation">
-      <router-link to="/">Home</router-link>
-      <router-link to="/resources">Resources</router-link>
-    </div>
-  </nav>
-
-  <router-view></router-view>
+  <div class="container">
+    <header>
+      <nav>
+        <div>
+          <h3>exhala</h3>
+          <h5>An interactive <i>najasa</i> removal walkthrough</h5>
+        </div>
+        <div class="page-navigation">
+          <router-link to="/">Home</router-link>
+          <router-link to="/resources">Resources</router-link>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
 <script setup>
@@ -24,6 +29,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+main {
+  height: 400px;
 }
 nav {
   display: flex;

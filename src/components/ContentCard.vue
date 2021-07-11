@@ -28,6 +28,8 @@ export default {
   box-shadow: 5px 3px 3px lightgray;
 }
 header {
+  color: slategray;
+  text-transform: capitalize;
   padding: 10px;
   border-bottom: 1px solid lightgray;
   box-shadow: 2px 2px 2px lightgray;

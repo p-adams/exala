@@ -2,23 +2,17 @@
   <div class="types-container">
     <div class="type">
       <content-card>
-        <template v-slot:header>
-          <h4>light</h4>
-        </template>
+        <template v-slot:header> light </template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
-        <template v-slot:header>
-          <h4>medium</h4>
-        </template>
+        <template v-slot:header> medium </template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
-        <template v-slot:header>
-          <h4>heavy</h4>
-        </template>
+        <template v-slot:header> heavy </template>
       </content-card>
     </div>
   </div>
@@ -34,8 +28,5 @@ export default {
 <style>
 .types-container {
   grid-template-columns: auto auto auto;
-}
-.type {
-  color: slategray;
 }
 </style>

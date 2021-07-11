@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h2>{{ prompt }}</h2>
-    <router-view />
-
+    <p>{{ prompt }}</p>
+    <section>
+      <router-view />
+    </section>
     <ul>
       <li v-for="(step, index) in steps" :key="index">
         <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
@@ -35,7 +36,6 @@ const handleStep = ({ path, name }) => {
 div {
   outline: 1px solid lightgray;
   border-radius: 2px;
-  height: 350px;
   display: grid;
 }
 ul {
