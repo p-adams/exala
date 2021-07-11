@@ -17,16 +17,16 @@ import { useRouter, useRoute } from "vue-router";
 import prompts from "../utils/routeNameToDescriptionMap";
 const router = useRouter();
 const route = useRoute();
-const prompt = ref(prompts[route.name]);
+const prompt = ref(prompts()[route.name]);
 onUpdated(() => {
-  prompt.value = prompts[route.name];
+  prompt.value = prompts()[route.name];
 });
 const { children: steps } = router
   .getRoutes()
   .find((route) => route.path === "/");
 
 const handleStep = ({ path, name }) => {
-  prompt.value = prompts[name];
+  prompt.value = prompts()[name];
   router.push(path);
 };
 </script>

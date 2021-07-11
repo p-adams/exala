@@ -5,6 +5,7 @@ import Start from "../components/Start.vue";
 import Types from "../components/Types.vue";
 import Transfer from "../components/Transfer.vue";
 import Attributes from "../components/Attributes.vue";
+import CleaningSteps from "../components/CleaningSteps.vue";
 const routes = [
   {
     path: "/",
@@ -15,6 +16,7 @@ const routes = [
       { path: "/types", component: Types, name: "types" },
       { path: "/transfer", component: Transfer, name: "transfer" },
       { path: "/attributes", component: Attributes, name: "attributes" },
+      { path: "/clean", component: CleaningSteps, name: "clean" },
     ],
   },
   { path: "/resources", component: Resources, name: "resources" },
