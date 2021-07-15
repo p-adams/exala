@@ -37,4 +37,9 @@ export default {
 .transfer-container {
   grid-template-columns: auto auto;
 }
+@media screen and (max-width: 44em) {
+  .transfer-container {
+    grid-template-columns: auto;
+  }
+}
 </style>

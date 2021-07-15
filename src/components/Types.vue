@@ -29,4 +29,9 @@ export default {
 .types-container {
   grid-template-columns: auto auto auto;
 }
+@media screen and (max-width: 44em) {
+  .types-container {
+    grid-template-columns: auto;
+  }
+}
 </style>
