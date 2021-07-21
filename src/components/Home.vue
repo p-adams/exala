@@ -6,7 +6,8 @@
     </section>
     <ul>
       <li v-for="(step, index) in steps" :key="index">
-        <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
+        ><span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
+        >
       </li>
     </ul>
   </div>
