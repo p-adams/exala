@@ -1,6 +1,11 @@
 <template>
   <div>
     <p>{{ prompt }}</p>
+    <ul v-show="route.name !== 'home'">
+      <li v-for="(step, index) in steps" :key="index">
+        <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
+      </li>
+    </ul>
     <section>
       <article v-if="route.name === 'home'">
         <h3>
@@ -20,11 +25,6 @@
 
       <router-view />
     </section>
-    <ul v-show="route.name !== 'home'">
-      <li v-for="(step, index) in steps" :key="index">
-        <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -51,12 +51,9 @@ const handleStep = ({ path, name }) => {
 
 <style scoped>
 div {
-  outline: 1px solid lightgray;
-  border-radius: 2px;
   display: grid;
 }
 ul {
-  align-self: end;
   list-style: none;
   padding: 0;
   margin: 0;

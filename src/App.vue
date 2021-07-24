@@ -4,7 +4,6 @@
       <nav>
         <div>
           <h3>exhala</h3>
-          <h5>An interactive <i>najasa</i> removal walkthrough</h5>
         </div>
         <div class="page-navigation">
           <router-link to="/">Home</router-link>
@@ -34,13 +33,20 @@ main {
   height: 400px;
 }
 nav {
+  height: 60px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   margin-bottom: 40px;
   border-bottom: 1px solid lightgray;
   background: steelblue;
   color: whitesmoke;
 }
+nav div {
+  display: flex;
+  margin-top: auto;
+}
+
 h3 {
   font-size: 32px;
 }
