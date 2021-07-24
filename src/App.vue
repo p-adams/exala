@@ -41,6 +41,9 @@ nav {
   background: steelblue;
   color: whitesmoke;
 }
+h3 {
+  font-size: 32px;
+}
 h3,
 h5 {
   padding: 4px;

@@ -2,15 +2,12 @@
   <content-card>
     <template v-slot:header> Start </template>
     <template v-slot:content>
-      <h3>
-        Your body, clothing, or place of worship came into contact with a
-        physical impurity
-      </h3>
+      display summary of steps
       <p>
         Follow the prompts above to be guided along the steps to remove that
         physical impurity.
-      </p>
-    </template>
+      </p></template
+    >
   </content-card>
 </template>
 
@@ -21,8 +18,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h3 {
-  text-align: center;
-}
-</style>
+<style scoped></style>
