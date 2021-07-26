@@ -23,6 +23,7 @@ export default {
   border: 1px solid lightgray;
   border-radius: 2px;
   height: 100%;
+  min-width: 400px;
 }
 .content-card-container:hover {
   border: 1px solid lightskyblue;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ prompt }}</p>
+    <p class="prompt">{{ prompt }}</p>
     <ul v-show="route.name !== 'home'">
       <li v-for="(step, index) in steps" :key="index">
         <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
@@ -8,22 +8,23 @@
     </ul>
     <section>
       <article v-if="route.name === 'home'">
-        <h3>
+        <p>
           exhala is an interactive walkthrough on how to remove physical
           impurity
-        </h3>
-        <h4>
+        </p>
+        <p>
           Your body, clothing, or place of worship came into contact with a
           physical impurity
-        </h4>
+        </p>
 
         <p>
           To begin the walkthrough, click
           <router-link to="/start">Start</router-link> to begin.
         </p>
       </article>
-
-      <router-view />
+      <section class="rendered-view-container">
+        <router-view />
+      </section>
     </section>
   </div>
 </template>
@@ -34,7 +35,6 @@ import { useRouter, useRoute } from "vue-router";
 import prompts from "../utils/routeNameToDescriptionMap";
 const router = useRouter();
 const route = useRoute();
-console.log(route.name);
 const prompt = ref(prompts()[route.name]);
 onUpdated(() => {
   prompt.value = prompts()[route.name];
@@ -49,9 +49,20 @@ const handleStep = ({ path, name }) => {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.prompt {
+  font-size: 18px;
+}
+.rendered-view-container {
+  > * {
+    display: grid;
+  }
+}
 div {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 ul {
   list-style: none;
