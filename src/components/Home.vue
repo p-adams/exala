@@ -3,7 +3,12 @@
     <p class="prompt">{{ prompt }}</p>
     <ul v-show="route.name !== 'home'">
       <li v-for="(step, index) in steps" :key="index">
-        <span class="step" @click="handleStep(step)">{{ index + 1 }}</span>
+        <span
+          class="step"
+          @click="handleStep(step)"
+          :class="{ active: route.name === step.path.substring(1) }"
+          >{{ index + 1 }}</span
+        >
       </li>
     </ul>
     <section>
@@ -72,6 +77,12 @@ ul {
 li {
   padding: 10px;
   display: inline-block;
+  span {
+    &.active {
+      font-size: 18px;
+      color: steelblue;
+    }
+  }
 }
 .step {
   cursor: pointer;
