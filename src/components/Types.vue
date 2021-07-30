@@ -2,17 +2,23 @@
   <div class="types-container">
     <div class="type">
       <content-card>
-        <template v-slot:header> light </template>
+        <template v-slot:header>
+          <span>light <i class="fas fa-info"></i> </span
+        ></template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
-        <template v-slot:header> medium </template>
+        <template v-slot:header>
+          <span>medium <i class="fas fa-info"></i> </span>
+        </template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
-        <template v-slot:header> heavy </template>
+        <template v-slot:header>
+          <span>heavy <i class="fas fa-info"></i></span>
+        </template>
       </content-card>
     </div>
   </div>
