@@ -3,37 +3,45 @@
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span>light <i class="fas fa-info"></i> </span
+          <span
+            >light
+            <app-icon @on-icon-click="showInfo" icon-class="fa-info" /> </span
         ></template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span>medium <i class="fas fa-info"></i> </span>
+          <span>medium <app-icon icon-class="fa-info" /> </span>
         </template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span>heavy <i class="fas fa-info"></i></span>
+          <span>heavy <app-icon icon-class="fa-info" /></span>
         </template>
       </content-card>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import ContentCard from "./ContentCard.vue";
-export default {
-  components: { ContentCard },
-};
+import AppIcon from "./app/AppIcon.vue";
+function showInfo() {
+  console.log("show");
+}
 </script>
 
-<style>
+<style lang="scss" scoped>
 .types-container {
   grid-template-columns: auto auto auto;
+  span {
+    i {
+      font-size: 14px;
+    }
+  }
 }
 @media screen and (max-width: 44em) {
   .types-container {
