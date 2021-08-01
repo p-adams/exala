@@ -1,27 +1,103 @@
 <template>
-  <span>
-    <slot />
+  <span :class="tooltipClass">
+    <slot @click="toggleShow" />
   </span>
 </template>
-<script>
-import { ref } from "@vue/reactivity";
-export default {
-  setup() {
-    const show = ref(false);
-    function toggleShow() {
-      console.log("meow");
-      show.value = !show;
-    }
-    return {
-      show,
-      toggleShow,
-    };
-  },
-};
+<script setup>
+import { computed, defineProps } from "@vue/runtime-core";
+
+const props = defineProps({ position: String, show: Boolean });
+const tooltipClass = computed(
+  () => `app-tooltip ${props.position} ${props.show ? "show" : ""}`
+);
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .app-tooltip {
-  border: 1px solid lightgray;
-  border-radius: 2px;
+  position: relative;
+  text-align: center;
+  &::after {
+    background-color: steelblue;
+    color: whitesmoke;
+    padding: 10px 15px;
+    position: absolute;
+    display: none;
+    text-align: center;
+    z-index: 999;
+    border-radius: 4px;
+  }
+  &::before {
+    background-color: steelblue;
+    content: "";
+    display: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 999;
+  }
+  &.show::after {
+    display: block;
+  }
+  &.show::before {
+    display: block;
+  }
+  &:hover::after {
+    display: block;
+  }
+  &:hover::before {
+    display: block;
+  }
+  &.top {
+    &::before {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+    }
+    &::after {
+      content: "top";
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 10px));
+    }
+  }
+
+  &.bottom {
+    &::before {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, calc(100% + 5px)) rotate(45deg);
+    }
+    &::after {
+      content: "bottom";
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, calc(100% + 10px));
+    }
+  }
+  &.right {
+    &::before {
+      top: 50%;
+      right: 0;
+      transform: translate(calc(100% + 5px), -50%) rotate(45deg);
+    }
+    &::after {
+      content: "right";
+      top: 0;
+      right: 0;
+      transform: translateX(calc(100% + 10px));
+    }
+  }
+  &.left {
+    &::before {
+      top: 50%;
+      left: 0;
+      transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
+    }
+    &::after {
+      content: "left";
+      top: 0;
+      left: 0;
+      transform: translateX(calc(-100% - 10px));
+    }
+  }
 }
 </style>

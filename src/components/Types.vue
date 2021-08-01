@@ -5,21 +5,36 @@
         <template v-slot:header>
           <span
             >light
-            <app-icon @on-icon-click="showInfo" icon-class="fa-info" /> </span
+            <app-tooltip
+              ><app-icon icon-class="fa-info-circle"
+            /></app-tooltip> </span
         ></template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span>medium <app-icon icon-class="fa-info" /> </span>
+          <span
+            >medium
+            <app-tooltip position="top"
+              ><app-icon icon-class="fa-info-circle"
+            /></app-tooltip>
+          </span>
         </template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span>heavy <app-icon icon-class="fa-info" /></span>
+          <span
+            >heavy
+            <app-tooltip position="top" :show="tooltipIsVisible"
+              ><app-icon
+                icon-class="fa-info-circle"
+                @on-icon-click="
+                  tooltipIsVisible = !tooltipIsVisible
+                " /></app-tooltip
+          ></span>
         </template>
       </content-card>
     </div>
@@ -29,9 +44,9 @@
 <script setup>
 import ContentCard from "./ContentCard.vue";
 import AppIcon from "./app/AppIcon.vue";
-function showInfo() {
-  console.log("show");
-}
+import AppTooltip from "./app/AppTooltip.vue";
+import { ref } from "@vue/reactivity";
+const tooltipIsVisible = ref(false);
 </script>
 
 <style lang="scss" scoped>
