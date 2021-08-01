@@ -5,7 +5,7 @@
         <template v-slot:header>
           <span
             >light
-            <app-tooltip
+            <app-tooltip position="top" tooltip-data="light physical impurity"
               ><app-icon icon-class="fa-info-circle"
             /></app-tooltip> </span
         ></template>
@@ -16,7 +16,7 @@
         <template v-slot:header>
           <span
             >medium
-            <app-tooltip position="top"
+            <app-tooltip position="top" tooltip-data="medium physical impurity"
               ><app-icon icon-class="fa-info-circle"
             /></app-tooltip>
           </span>
@@ -28,7 +28,7 @@
         <template v-slot:header>
           <span
             >heavy
-            <app-tooltip position="top" :show="tooltipIsVisible"
+            <app-tooltip position="top" tooltip-data="heavy physical impurity"
               ><app-icon
                 icon-class="fa-info-circle"
                 @on-icon-click="

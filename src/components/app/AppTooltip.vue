@@ -53,7 +53,7 @@ const tooltipClass = computed(
       transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
     }
     &::after {
-      content: "top";
+      content: attr(tooltip-data);
       top: 0;
       left: 50%;
       transform: translate(-50%, calc(-100% - 10px));
@@ -67,7 +67,7 @@ const tooltipClass = computed(
       transform: translate(-50%, calc(100% + 5px)) rotate(45deg);
     }
     &::after {
-      content: "bottom";
+      content: attr(tooltip-data);
       bottom: 0;
       left: 50%;
       transform: translate(-50%, calc(100% + 10px));
@@ -80,7 +80,7 @@ const tooltipClass = computed(
       transform: translate(calc(100% + 5px), -50%) rotate(45deg);
     }
     &::after {
-      content: "right";
+      content: attr(tooltip-data);
       top: 0;
       right: 0;
       transform: translateX(calc(100% + 10px));
@@ -93,7 +93,7 @@ const tooltipClass = computed(
       transform: translate(calc(-100% - 5px), -50%) rotate(45deg);
     }
     &::after {
-      content: "left";
+      content: attr(tooltip-data);
       top: 0;
       left: 0;
       transform: translateX(calc(-100% - 10px));
