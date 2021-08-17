@@ -3,38 +3,39 @@
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span
-            >light
-            <app-tooltip position="top" tooltip-data="light physical impurity"
-              ><app-icon icon-class="fa-info-circle"
-            /></app-tooltip> </span
-        ></template>
-      </content-card>
-    </div>
-    <div class="type">
-      <content-card>
-        <template v-slot:header>
-          <span
-            >medium
-            <app-tooltip position="top" tooltip-data="medium physical impurity"
-              ><app-icon icon-class="fa-info-circle"
-            /></app-tooltip>
+          <span class="text">
+            <app-tooltip position="top" tooltip-data="light physical impurity">
+              light
+            </app-tooltip>
           </span>
+          <app-icon icon-class="fa-info-circle" />
         </template>
       </content-card>
     </div>
     <div class="type">
       <content-card>
         <template v-slot:header>
-          <span
-            >heavy
+          <span class="text">
+            <app-tooltip position="top" tooltip-data="medium physical impurity"
+              >medium</app-tooltip
+            >
+          </span>
+          <app-icon icon-class="fa-info-circle" />
+        </template>
+      </content-card>
+    </div>
+    <div class="type">
+      <content-card>
+        <template v-slot:header>
+          <span class="text">
             <app-tooltip position="top" tooltip-data="heavy physical impurity"
-              ><app-icon
-                icon-class="fa-info-circle"
-                @on-icon-click="
-                  tooltipIsVisible = !tooltipIsVisible
-                " /></app-tooltip
-          ></span>
+              >heavy</app-tooltip
+            ></span
+          >
+          <app-icon
+            icon-class="fa-info-circle"
+            @on-icon-click="tooltipIsVisible = !tooltipIsVisible"
+          />
         </template>
       </content-card>
     </div>
@@ -52,9 +53,9 @@ const tooltipIsVisible = ref(false);
 <style lang="scss" scoped>
 .types-container {
   grid-template-columns: auto auto auto;
-  span {
-    i {
-      font-size: 14px;
+  .type {
+    .text {
+      margin-right: 10px;
     }
   }
 }

@@ -1,7 +1,9 @@
 <template>
   <div class="content-card-container">
     <header>
-      <slot name="header" />
+      <div class="header-text">
+        <slot name="header" />
+      </div>
     </header>
     <main>
       <slot name="content" />
@@ -16,7 +18,7 @@ export default {
   setup() {},
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .content-card-container {
   cursor: pointer;
   display: grid;
@@ -37,5 +39,10 @@ header {
   box-shadow: 2px 2px 2px lightgray;
   height: 25%;
   font-weight: bold;
+  .header-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>
