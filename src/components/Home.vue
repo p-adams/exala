@@ -3,12 +3,19 @@
     <p class="prompt">{{ prompt }}</p>
     <ul v-show="route.name !== 'home'">
       <li v-for="(step, index) in steps" :key="index">
-        <span
-          class="step"
-          @click="handleStep(step)"
-          :class="{ active: route.name === step.path.substring(1) }"
-          >{{ index + 1 }}</span
-        >
+        <span class="step-container">
+          <app-icon
+            v-if="route.name === step.path.substring(1)"
+            icon-class="fa-chevron-down"
+          ></app-icon>
+          <span v-else />
+          <span
+            class="step"
+            @click="handleStep(step)"
+            :class="{ active: route.name === step.path.substring(1) }"
+            >{{ index + 1 }}</span
+          >
+        </span>
       </li>
     </ul>
     <section>
@@ -38,6 +45,7 @@
 import { onUpdated, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import prompts from "../utils/routeNameToDescriptionMap";
+import AppIcon from "./app/AppIcon.vue";
 const router = useRouter();
 const route = useRoute();
 const prompt = ref(prompts()[route.name]);
@@ -78,13 +86,22 @@ li {
   padding: 25px;
   display: inline-block;
 }
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+  .fas {
+    &.fa-chevron-down {
+      color: cornflowerblue;
+    }
+  }
+}
+
 .step {
   cursor: pointer;
   padding: 10px;
   &.active {
-    border: 1px solid #efefef;
-    border-radius: 2px;
-    box-shadow: 0px 2px 4px darkgray;
+    color: cornflowerblue;
   }
 }
 article {

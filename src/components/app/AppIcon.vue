@@ -1,5 +1,5 @@
 <template>
-  <i :class="iconClassString" @click="emit('onIconClick')" />
+  <i :class="iconClassString" @click="emit('onIconClick')"></i>
 </template>
 <script setup>
 import { computed, defineProps } from "@vue/runtime-core";
