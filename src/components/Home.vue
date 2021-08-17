@@ -83,8 +83,8 @@ ul {
   margin: 0;
 }
 li {
-  padding: 25px;
   display: inline-block;
+  margin-right: 10px;
 }
 
 .step-container {
