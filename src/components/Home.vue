@@ -38,7 +38,6 @@
 import { onUpdated, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import prompts from "../utils/routeNameToDescriptionMap";
-import AppIcon from "./app/AppIcon.vue";
 const router = useRouter();
 const route = useRoute();
 const prompt = ref(prompts()[route.name]);
