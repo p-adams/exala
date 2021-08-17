@@ -2,7 +2,7 @@
   <i :class="iconClassString" @click="emit('onIconClick')" />
 </template>
 <script setup>
-import { computed, defineEmits, defineProps } from "@vue/runtime-core";
+import { computed, defineProps } from "@vue/runtime-core";
 
 const props = defineProps({
   iconClass: String,

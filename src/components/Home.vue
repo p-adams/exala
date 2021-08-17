@@ -38,6 +38,7 @@
 import { onUpdated, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import prompts from "../utils/routeNameToDescriptionMap";
+import AppIcon from "./app/AppIcon.vue";
 const router = useRouter();
 const route = useRoute();
 const prompt = ref(prompts()[route.name]);
@@ -48,8 +49,8 @@ const { children: steps } = router
   .getRoutes()
   .find((route) => route.path === "/");
 
-const handleStep = ({ path, name }) => {
-  prompt.value = prompts()[name];
+const handleStep = ({ path }) => {
+  prompt.value = prompts()[route.name];
   router.push(path);
 };
 </script>
@@ -75,17 +76,17 @@ ul {
   margin: 0;
 }
 li {
-  padding: 10px;
+  padding: 25px;
   display: inline-block;
-  span {
-    &.active {
-      font-size: 18px;
-      color: steelblue;
-    }
-  }
 }
 .step {
   cursor: pointer;
+  padding: 10px;
+  &.active {
+    border: 1px solid #efefef;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px darkgray;
+  }
 }
 article {
   display: flex;
