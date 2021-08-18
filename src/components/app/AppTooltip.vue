@@ -1,5 +1,5 @@
 <template>
-  <span :class="tooltipClass" @click="toggleShow()">
+  <span :class="tooltipClass">
     <slot />
   </span>
 </template>
@@ -10,9 +10,6 @@ const props = defineProps({ position: String, show: Boolean });
 const tooltipClass = computed(
   () => `app-tooltip ${props.position} ${props.show ? "show" : ""}`
 );
-function toggleShow() {
-  console.log("show");
-}
 </script>
 <style lang="scss" scoped>
 .app-tooltip {

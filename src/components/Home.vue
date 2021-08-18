@@ -3,19 +3,18 @@
     <p class="prompt">{{ prompt }}</p>
     <ul v-show="route.name !== 'home'">
       <li v-for="(step, index) in steps" :key="index">
-        <span class="step-container">
+        <div
+          class="step"
+          @click="handleStep(step)"
+          :class="{ active: route.name === step.path.substring(1) }"
+        >
           <app-icon
             v-if="route.name === step.path.substring(1)"
             icon-class="fa-chevron-down"
           ></app-icon>
-          <span v-else />
-          <span
-            class="step"
-            @click="handleStep(step)"
-            :class="{ active: route.name === step.path.substring(1) }"
-            >{{ index + 1 }}</span
-          >
-        </span>
+
+          <span v-else>{{ index + 1 }}</span>
+        </div>
       </li>
     </ul>
     <section>
@@ -85,16 +84,6 @@ ul {
 li {
   display: inline-block;
   margin-right: 10px;
-}
-
-.step-container {
-  display: flex;
-  flex-direction: column;
-  .fas {
-    &.fa-chevron-down {
-      color: cornflowerblue;
-    }
-  }
 }
 
 .step {
