@@ -7,14 +7,7 @@
           class="step"
           @click="handleStep(step)"
           :class="{ active: route.name === step.path.substring(1) }"
-        >
-          <app-icon
-            v-if="route.name === step.path.substring(1)"
-            icon-class="fa-chevron-down"
-          ></app-icon>
-
-          <span v-else>{{ index + 1 }}</span>
-        </div>
+        ></div>
       </li>
     </ul>
     <section>
@@ -89,8 +82,15 @@ li {
 .step {
   cursor: pointer;
   padding: 10px;
+  height: 12px;
+  width: 12px;
+  background-color: gray;
+  border-radius: 50%;
   &.active {
-    color: cornflowerblue;
+    background-color: cornflowerblue;
+    height: 15px;
+    width: 15px;
+    box-shadow: 0 4px 14px lightgray;
   }
 }
 article {
