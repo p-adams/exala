@@ -6,15 +6,31 @@
 <script setup>
 import { computed, defineProps } from "@vue/runtime-core";
 
-const props = defineProps({ position: String, show: Boolean });
+const props = defineProps({
+  position: String,
+  displayOn: {
+    type: String,
+    default: "hover",
+  },
+});
 const tooltipClass = computed(
-  () => `app-tooltip ${props.position} ${props.show ? "show" : ""}`
+  () =>
+    `app-tooltip ${
+      props.displayOn === "click"
+        ? "displayClick"
+        : props.displayOn === "hover"
+        ? "displayHover"
+        : ""
+    } ${props.position}`
 );
 </script>
 <style lang="scss" scoped>
 .app-tooltip {
   position: relative;
   text-align: center;
+  .cancel {
+    position: absolute;
+  }
   &::after {
     background-color: steelblue;
     color: whitesmoke;
@@ -34,16 +50,16 @@ const tooltipClass = computed(
     height: 15px;
     z-index: 999;
   }
-  &.show::after {
+  &.displayClick::after {
     display: block;
   }
-  &.show::before {
+  &.displayClick::before {
     display: block;
   }
-  &:hover::after {
+  &.displayHover:hover::after {
     display: block;
   }
-  &:hover::before {
+  &.displayHover:hover::before {
     display: block;
   }
   &.top {

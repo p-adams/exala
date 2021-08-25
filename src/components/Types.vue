@@ -8,7 +8,13 @@
               light
             </app-tooltip>
           </span>
-          <app-icon icon-class="fa-info-circle" />
+          <app-tooltip
+            position="top"
+            tooltip-data="details"
+            :displayOn="displayTooltip"
+          >
+            <app-icon icon-class="fa-info-circle" @on-icon-click="showInfo()" />
+          </app-tooltip>
         </template>
       </content-card>
     </div>
@@ -32,10 +38,7 @@
               >heavy</app-tooltip
             ></span
           >
-          <app-icon
-            icon-class="fa-info-circle"
-            @on-icon-click="tooltipIsVisible = !tooltipIsVisible"
-          />
+          <app-icon icon-class="fa-info-circle" />
         </template>
       </content-card>
     </div>
@@ -46,8 +49,12 @@
 import ContentCard from "./ContentCard.vue";
 import AppIcon from "./app/AppIcon.vue";
 import AppTooltip from "./app/AppTooltip.vue";
-import { ref } from "@vue/reactivity";
-const tooltipIsVisible = ref(false);
+import { computed, ref } from "@vue/reactivity";
+const infoIsVisible = ref(false);
+const showInfo = () => {
+  infoIsVisible.value = !infoIsVisible.value;
+};
+const displayTooltip = computed(() => (infoIsVisible.value ? "click" : ""));
 </script>
 
 <style lang="scss" scoped>
