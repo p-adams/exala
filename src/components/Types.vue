@@ -9,8 +9,8 @@
             </app-tooltip>
           </span>
           <app-dialog
-            dialogContent="light"
-            @toggleDialog="showDialog()"
+            :dialogContent="computedDialog.content"
+            @toggleDialog="showDialog('type_light')"
             :open="dialogIsVisible"
           />
         </template>
@@ -48,11 +48,21 @@ import ContentCard from "./ContentCard.vue";
 import AppIcon from "./app/AppIcon.vue";
 import AppTooltip from "./app/AppTooltip.vue";
 import AppDialog from "./app/AppDialog.vue";
+import useDialogs from "./app/useDialogs";
 import { computed, ref } from "@vue/reactivity";
+const { addDialog, removeDialog, currentDialog } = useDialogs();
 const dialogIsVisible = ref(false);
-const showDialog = () => {
+const showDialog = (key) => {
   dialogIsVisible.value = !dialogIsVisible.value;
+  if (dialogIsVisible.value === true) {
+    addDialog({ key, content: "light" });
+  } else {
+    removeDialog(key);
+  }
 };
+const computedDialog = computed(
+  () => currentDialog("type_light") || { key: "#", content: "" }
+);
 </script>
 
 <style lang="scss" scoped>
