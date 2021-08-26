@@ -78,7 +78,6 @@ li {
   display: inline-block;
   margin-right: 10px;
 }
-
 .step {
   cursor: pointer;
   padding: 10px;

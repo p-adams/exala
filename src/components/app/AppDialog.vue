@@ -1,13 +1,30 @@
 <template>
-  <div class="dialog-container">dialog</div>
+  <app-tooltip
+    position="top"
+    :tooltip-data="dialogContent"
+    :displayOn="displayTooltip"
+  >
+    <app-icon
+      :icon-class="dialogIconClass"
+      @on-icon-click="emit('toggleDialog')"
+    />
+  </app-tooltip>
 </template>
 <script setup>
+import AppTooltip from "./AppTooltip.vue";
+import AppIcon from "./AppIcon.vue";
+import { computed } from "@vue/reactivity";
 const props = defineProps({
   open: Boolean,
-  onClose: () => {},
+  dialogContent: {
+    type: String,
+  },
+  dialogIconClass: {
+    type: String,
+    default: "fa-info-circle",
+  },
 });
+const emit = defineEmits(["toggleDialog"]);
+const displayTooltip = computed(() => (props.open ? "click" : ""));
 </script>
-<style lang="scss" scoped>
-.dialog-container {
-}
-</style>
+<style lang="scss" scoped></style>
