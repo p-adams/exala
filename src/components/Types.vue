@@ -9,9 +9,9 @@
             </app-tooltip>
           </span>
           <app-dialog
-            :dialogContent="computedDialog.content"
+            :dialogContent="computedLightDialog.content"
             @toggleDialog="showDialog('type_light')"
-            :open="dialogIsVisible"
+            :open="!!currentDialog('type_light')"
           />
         </template>
       </content-card>
@@ -24,7 +24,11 @@
               >medium</app-tooltip
             >
           </span>
-          <app-icon icon-class="fa-info-circle" />
+          <app-dialog
+            :dialogContent="computedMediumDialog.content"
+            @toggleDialog="showDialog('type_medium')"
+            :open="!!currentDialog('type_medium')"
+          />
         </template>
       </content-card>
     </div>
@@ -36,7 +40,11 @@
               >heavy</app-tooltip
             ></span
           >
-          <app-icon icon-class="fa-info-circle" />
+          <app-dialog
+            :dialogContent="computedHeavyDialog.content"
+            @toggleDialog="showDialog('type_heavy')"
+            :open="!!currentDialog('type_heavy')"
+          />
         </template>
       </content-card>
     </div>
@@ -45,23 +53,29 @@
 
 <script setup>
 import ContentCard from "./ContentCard.vue";
-import AppIcon from "./app/AppIcon.vue";
 import AppTooltip from "./app/AppTooltip.vue";
 import AppDialog from "./app/AppDialog.vue";
 import useDialogs from "./app/useDialogs";
+import mapTypeToDialogContent from "../utils/mapTypeToDialogContent";
 import { computed, ref } from "@vue/reactivity";
 const { addDialog, removeDialog, currentDialog } = useDialogs();
 const dialogIsVisible = ref(false);
 const showDialog = (key) => {
   dialogIsVisible.value = !dialogIsVisible.value;
   if (dialogIsVisible.value === true) {
-    addDialog({ key, content: "light" });
+    addDialog(mapTypeToDialogContent(key));
   } else {
     removeDialog(key);
   }
 };
-const computedDialog = computed(
+const computedLightDialog = computed(
   () => currentDialog("type_light") || { key: "#", content: "" }
+);
+const computedMediumDialog = computed(
+  () => currentDialog("type_medium") || { key: "#", content: "" }
+);
+const computedHeavyDialog = computed(
+  () => currentDialog("type_heavy") || { key: "#", content: "" }
 );
 </script>
 
