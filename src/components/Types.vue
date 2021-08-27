@@ -9,10 +9,10 @@
             </app-tooltip>
           </span>
           <app-dialog
-            :dialogContent="computedLightDialog.content"
+            :dialogContent="getCurrentDialog('type_light').content"
             @toggleDialog="showDialog('type_light')"
             :open="!!currentDialog('type_light')"
-          />
+          ></app-dialog>
         </template>
       </content-card>
     </div>
@@ -25,7 +25,7 @@
             >
           </span>
           <app-dialog
-            :dialogContent="computedMediumDialog.content"
+            :dialogContent="getCurrentDialog('type_medium').content"
             @toggleDialog="showDialog('type_medium')"
             :open="!!currentDialog('type_medium')"
           />
@@ -41,7 +41,7 @@
             ></span
           >
           <app-dialog
-            :dialogContent="computedHeavyDialog.content"
+            :dialogContent="getCurrentDialog('type_heavy').content"
             @toggleDialog="showDialog('type_heavy')"
             :open="!!currentDialog('type_heavy')"
           />
@@ -57,7 +57,7 @@ import AppTooltip from "./app/AppTooltip.vue";
 import AppDialog from "./app/AppDialog.vue";
 import useDialogs from "./app/useDialogs";
 import mapTypeToDialogContent from "../utils/mapTypeToDialogContent";
-import { computed, ref } from "@vue/reactivity";
+import { ref } from "@vue/reactivity";
 const { addDialog, removeDialog, currentDialog } = useDialogs();
 const dialogIsVisible = ref(false);
 const showDialog = (key) => {
@@ -68,15 +68,8 @@ const showDialog = (key) => {
     removeDialog(key);
   }
 };
-const computedLightDialog = computed(
-  () => currentDialog("type_light") || { key: "#", content: "" }
-);
-const computedMediumDialog = computed(
-  () => currentDialog("type_medium") || { key: "#", content: "" }
-);
-const computedHeavyDialog = computed(
-  () => currentDialog("type_heavy") || { key: "#", content: "" }
-);
+const getCurrentDialog = (type) =>
+  currentDialog(type) || { key: "", content: "" };
 </script>
 
 <style lang="scss" scoped>
