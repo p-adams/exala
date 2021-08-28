@@ -81,14 +81,14 @@ li {
 .step {
   cursor: pointer;
   padding: 10px;
-  height: 12px;
-  width: 12px;
+  height: 2px;
+  width: 2px;
   background-color: gray;
   border-radius: 50%;
   &.active {
     background-color: cornflowerblue;
-    height: 15px;
-    width: 15px;
+    height: 3px;
+    width: 3px;
     box-shadow: 0 4px 14px lightgray;
   }
 }
