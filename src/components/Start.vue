@@ -2,12 +2,11 @@
   <content-card>
     <template v-slot:header> Start </template>
     <template v-slot:content>
-      display summary of steps
-      <p>
-        Follow the prompts above to be guided along the steps to remove that
-        physical impurity.
-      </p></template
-    >
+      <ul>
+        <li>Types of physical impurity</li>
+      </ul>
+      <p>Follow the prompts above for instructions.</p>
+    </template>
   </content-card>
 </template>
 

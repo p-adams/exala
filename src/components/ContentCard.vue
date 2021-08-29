@@ -21,28 +21,33 @@ export default {
 <style scoped lang="scss">
 .content-card-container {
   cursor: pointer;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border: 1px solid lightgray;
   border-radius: 2px;
   height: 100%;
   min-width: 400px;
-}
-.content-card-container:hover {
-  border: 1px solid lightskyblue;
-  box-shadow: 5px 3px 3px lightgray;
-}
-header {
-  color: slategray;
-  text-transform: capitalize;
-  padding: 10px;
-  border-bottom: 1px solid lightgray;
-  box-shadow: 2px 2px 2px lightgray;
-  height: 25%;
-  font-weight: bold;
-  .header-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  header {
+    color: slategray;
+    text-transform: capitalize;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 2px 2px 2px lightgray;
+    height: 25%;
+    font-weight: bold;
+    width: 100%;
+    .header-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  main {
+    text-align: left;
+    width: 100%;
+  }
+  &:hover {
+    border: 1px solid lightskyblue;
+    box-shadow: 5px 3px 3px lightgray;
   }
 }
 </style>
