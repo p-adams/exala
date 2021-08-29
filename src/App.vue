@@ -17,12 +17,10 @@
   </div>
 </template>
 
-<script setup>
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
-</script>
+<script setup></script>
 
-<style>
+<style lang="scss">
+$primary-light: #4791db;
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,12 +37,16 @@ nav {
   flex-direction: row;
   margin-bottom: 40px;
   border-bottom: 1px solid lightgray;
-  background: steelblue;
+  background: $primary-light;
   color: whitesmoke;
 }
 nav div {
   display: flex;
   margin-top: auto;
+}
+
+p {
+  color: rgba(0, 0, 0, 0.87);
 }
 
 h3 {

@@ -80,16 +80,18 @@ li {
 }
 .step {
   cursor: pointer;
-  padding: 10px;
-  height: 2px;
-  width: 2px;
+  height: 12px;
+  width: 12px;
   background-color: gray;
   border-radius: 50%;
+  opacity: 0.5;
+
   &.active {
+    opacity: 1;
     background-color: cornflowerblue;
-    height: 3px;
-    width: 3px;
-    box-shadow: 0 4px 14px lightgray;
+    height: 14px;
+    width: 14px;
+    box-shadow: 0 4px 4px lightgray;
   }
 }
 article {
