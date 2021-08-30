@@ -31,7 +31,7 @@ export default {
     color: slategray;
     text-transform: capitalize;
     border-bottom: 1px solid lightgray;
-    box-shadow: 2px 2px 2px lightgray;
+    box-shadow: 2px 2px 2px gray;
     height: 25%;
     font-weight: bold;
     width: 100%;
