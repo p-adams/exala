@@ -30,11 +30,6 @@ $primary-light: #4791db;
 main {
   height: 400px;
 }
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
 nav {
   height: 60px;
   display: flex;

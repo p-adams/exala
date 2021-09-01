@@ -44,6 +44,7 @@ export default {
   main {
     text-align: left;
     width: 100%;
+    padding: 10px;
   }
   &:hover {
     border: 1px solid lightskyblue;
