@@ -27,4 +27,10 @@ const props = defineProps({
 const emit = defineEmits(["toggleDialog"]);
 const displayTooltip = computed(() => (props.open ? "click" : ""));
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-tooltip {
+  &::after {
+    width: 200px;
+  }
+}
+</style>

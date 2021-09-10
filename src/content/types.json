@@ -1,0 +1,14 @@
+{
+  "light": {
+    "definition": "light physical impurity is called light because its ruling is minor.",
+    "types": [""]
+  },
+  "medium": {
+    "definition": "medium physical impurity is called medium because its ruling is between major and minor",
+    "types": [""]
+  },
+  "heavy": {
+    "definition": "heavy physical impurity is called heavy because its ruling is major",
+    "types": [""]
+  }
+}

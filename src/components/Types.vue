@@ -9,7 +9,7 @@
             </app-tooltip>
           </span>
           <app-dialog
-            :dialogContent="getCurrentDialog('type_light').content"
+            :dialogContent="getCurrentDialog('type_light').content.definition"
             @toggleDialog="showDialog('type_light')"
             :open="!!currentDialog('type_light')"
           ></app-dialog>
@@ -25,7 +25,7 @@
             >
           </span>
           <app-dialog
-            :dialogContent="getCurrentDialog('type_medium').content"
+            :dialogContent="getCurrentDialog('type_medium').content.definition"
             @toggleDialog="showDialog('type_medium')"
             :open="!!currentDialog('type_medium')"
           />
@@ -41,7 +41,7 @@
             ></span
           >
           <app-dialog
-            :dialogContent="getCurrentDialog('type_heavy').content"
+            :dialogContent="getCurrentDialog('type_heavy').content.definition"
             @toggleDialog="showDialog('type_heavy')"
             :open="!!currentDialog('type_heavy')"
           />

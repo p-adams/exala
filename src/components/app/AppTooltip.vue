@@ -1,7 +1,7 @@
 <template>
-  <span :class="tooltipClass">
+  <div :class="tooltipClass">
     <slot />
-  </span>
+  </div>
 </template>
 <script setup>
 import { computed, defineProps } from "@vue/runtime-core";
