@@ -5,7 +5,7 @@
         <slot name="header" />
       </div>
     </header>
-    <main>
+    <main class="main-content-wrapper">
       <slot name="content" />
     </main>
     <footer>
@@ -29,23 +29,25 @@ export default {
   min-width: 400px;
   header {
     color: slategray;
-    text-transform: capitalize;
+    text-transform: uppercase;
     border-bottom: 1px solid lightgray;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 8px lightgray;
     height: 25%;
     font-weight: bold;
-    width: 100%;
+    width: 93%;
+    padding: 18px;
     .header-text {
       display: flex;
       align-items: center;
       justify-content: center;
     }
   }
-  main {
+  .main-content-wrapper {
     text-align: left;
-    width: 100%;
+
     padding: 10px;
   }
+
   &:hover {
     border: 1px solid lightskyblue;
     box-shadow: 5px 3px 3px lightgray;

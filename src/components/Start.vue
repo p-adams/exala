@@ -1,6 +1,6 @@
 <template>
   <content-card>
-    <template v-slot:header> Start </template>
+    <template v-slot:header> Introduction </template>
     <template v-slot:content>
       <div class="start-content">
         <p>
