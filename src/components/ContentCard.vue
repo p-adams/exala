@@ -44,7 +44,6 @@ export default {
   }
   .main-content-wrapper {
     text-align: left;
-
     padding: 10px;
   }
 
