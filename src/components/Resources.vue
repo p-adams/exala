@@ -7,8 +7,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  setup() {},
-};
+<script setup>
+const terms = [];
 </script>
