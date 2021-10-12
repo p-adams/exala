@@ -34,7 +34,6 @@ export default {
     box-shadow: 2px 2px 8px lightgray;
     height: 25%;
     font-weight: bold;
-    width: 93%;
     padding: 18px;
     .header-text {
       display: flex;
