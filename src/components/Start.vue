@@ -18,6 +18,11 @@
         <p>Follow the prompts above for further instructions.</p>
       </div>
     </template>
+    <template v-slot:footer>
+      <div class="footer">
+        <router-link to="/types">Start</router-link>
+      </div>
+    </template>
   </content-card>
 </template>
 
@@ -40,6 +45,16 @@ export default {
     li {
       line-height: 25px;
     }
+  }
+}
+.footer {
+  a {
+    color: white;
+    width: 100%;
+    font-size: 32px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
   }
 }
 </style>

@@ -36,6 +36,7 @@ export default {
 <style scoped>
 .transfer-container {
   grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
 .transfer {
   height: 222px;

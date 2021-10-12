@@ -75,6 +75,7 @@ const getCurrentDialog = (type) =>
 <style lang="scss" scoped>
 .types-container {
   grid-template-columns: auto auto auto;
+  grid-gap: 10px;
   .type {
     .text {
       margin-right: 10px;

@@ -20,7 +20,6 @@ export default {
 </script>
 <style scoped lang="scss">
 .content-card-container {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   border: 1px solid lightgray;
@@ -30,8 +29,6 @@ export default {
   header {
     color: slategray;
     text-transform: uppercase;
-    border-bottom: 1px solid lightgray;
-    box-shadow: 2px 2px 8px lightgray;
     height: 25%;
     font-weight: bold;
     padding: 18px;
@@ -50,5 +47,9 @@ export default {
     border: 1px solid lightskyblue;
     box-shadow: 5px 3px 3px lightgray;
   }
+}
+footer {
+  width: 100%;
+  background-color: cornflowerblue;
 }
 </style>
